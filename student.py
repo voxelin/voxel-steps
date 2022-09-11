@@ -18,9 +18,12 @@ class Group:
     def __contains__(self, item):
         return item in self.students
 
-    def __str__(self):
-        return "Group " + self.name + " with students " + str(', '.join([i.name for i in self.students]))
-
+    def get_students(self):
+        for i in self.students:
+            print('''Name: {}
+Surname: {}
+Age: {}
+'''.format(i.name, i.surname, i.age))
 class Student:
     def __init__(self, name, surname, age):
         self.name = name
@@ -30,12 +33,7 @@ class Student:
     def get_grade(self):
         return self.grade
 
-    def __str__(self):
-        return '''Name: {}
-Surname: {}
-Age: {}'''.format(self.name, self.surname, self.age)
-
 
 group = Group("Python", [Student("John", "Smith", 20), Student("Bob", "Dylan", 21)])
 group.add_student(Student("Alice", "Cooper", 19))
-print(group)
+print(group.get_students())
