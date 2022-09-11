@@ -1,6 +1,3 @@
-from re import S
-
-
 class Group:
     def __init__(self, name, students):
         self.name = name
