@@ -1,3 +1,6 @@
+import statistics
+
+
 class Group:
     def __init__(self, name, students):
         self.name = name
@@ -23,17 +26,18 @@ class Group:
             print('''Name: {}
 Surname: {}
 Age: {}
-'''.format(i.name, i.surname, i.age))
+Grades: {}
+Avg: {}
+'''.format(i.name, i.surname, i.age, ','.join([str(i) for i in i.grades]), round(statistics.mean(i.grades))))
 class Student:
-    def __init__(self, name, surname, age):
+    def __init__(self, name, surname, age, grades):
         self.name = name
         self.age = age
         self.surname = surname
+        self.grades = grades
+    
 
-    def get_grade(self):
-        return self.grade
 
-
-group = Group("Python", [Student("John", "Smith", 20), Student("Bob", "Dylan", 21)])
-group.add_student(Student("Alice", "Cooper", 19))
+group = Group("Python", [Student("John", "Smith", 20, [11,12,12,3,4,5,6]), Student("Bob", "Dylan", 21,[1,2,3,4,5])])
+group.add_student(Student("Alice", "Cooper", 19,[10,12,12,3,4,5,6]))
 print(group.get_students())
