@@ -41,25 +41,25 @@ def all_products():
     print(tabulate([list(i) for i in products], tablefmt="fancy_grid"))
 
 
-while True:
-    print(
-        f"{Back.BLUE}{Fore.WHITE}[MENU]{Style.RESET_ALL} 1. Add product; 2. Delete product; 3. Update product; 4. List Products; 5. Exit")
-    choice = int(input("Enter your choice: "))
-    if choice == 1:
-        add_product(input("Enter product name: "),
-                    input("Enter product price: "))
-    elif choice == 2:
-        del_product(int(input("Enter product id: ")))
-    elif choice == 3:
-        upd_product(int(input("Enter product id: ")), input("Enter product name: "), input(
-            "Enter product price: "), input("Enter product availability: "))
-    elif choice == 4:
-        all_products()
-    elif choice == 5:
-        break
-    else:
-        print(f"{Back.RED}{Fore.WHITE}[ERROR]{Style.RESET_ALL} Invalid choice")
-    connection.commit()
+# while True:
+#     print(
+#         f"{Back.BLUE}{Fore.WHITE}[MENU]{Style.RESET_ALL} 1. Add product; 2. Delete product; 3. Update product; 4. List Products; 5. Exit")
+#     choice = int(input("Enter your choice: "))
+#     if choice == 1:
+#         add_product(input("Enter product name: "),
+#                     input("Enter product price: "))
+#     elif choice == 2:
+#         del_product(int(input("Enter product id: ")))
+#     elif choice == 3:
+#         upd_product(int(input("Enter product id: ")), input("Enter product name: "), input(
+#             "Enter product price: "), input("Enter product availability: "))
+#     elif choice == 4:
+#         all_products()
+#     elif choice == 5:
+#         break
+#     else:
+#         print(f"{Back.RED}{Fore.WHITE}[ERROR]{Style.RESET_ALL} Invalid choice")
+#     connection.commit()
 
 
 connection.close()
